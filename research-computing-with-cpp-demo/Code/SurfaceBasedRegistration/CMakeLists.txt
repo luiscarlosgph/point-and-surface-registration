@@ -12,6 +12,8 @@
 #
 #============================================================================*/
 
-add_subdirectory(HelloWorld)
-add_subdirectory(PointBasedRegistration)
-add_subdirectory(SurfaceBasedRegistration)
+add_executable(SurfaceBasedRegistration main.cpp commandlineoptions.cpp)
+target_link_libraries(SurfaceBasedRegistration ${ITK_LIBRARIES} ${Boost_LIBRARIES})
+
+add_executable(SurfaceBasedRegistrationUnitTesting testingsbr.cpp commandlineoptions.cpp)
+target_link_libraries(SurfaceBasedRegistrationUnitTesting ${ITK_LIBRARIES} ${Boost_LIBRARIES})
